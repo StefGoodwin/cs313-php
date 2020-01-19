@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>STEF GOODWIN'S PAGE</title>
-        <link type="text/css" rel="stylesheet" href="/cs313/cs313_stef/styles.css" media="screen">
+        <link type="text/css" rel="stylesheet" href="/web/styles.css" media="screen">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         
         
