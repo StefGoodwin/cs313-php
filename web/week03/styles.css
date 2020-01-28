@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+	}
+
+body {
+	background-color: aliceblue;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+	text-align: center;
+	
+}
+
+div.wrapper {
+	margin: auto;
+	
+	
+}
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+a.mockup {
+	
+}
+img.thumbnail {
+	width: 300px;
+	
+}
+
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+	
+  }
+	div img.thumbnail {
+		width: 100%;;
+		
+	}
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.add-to-cart {
+	
+	text-align: left;
+}
+
+/*****************************************/
+main.cart-page {
+	text-align: left;
+	
+}
+
+div.cart-container {
+	margin: auto;
+	padding: 0px 15px 15px 15px;
+	border: 2px solid gray;
+	width: 50%;
+	height: auto;
+	text-align: left;
+	font-size: 95%;
+	font-weight: bold;
+	word-wrap: normal;
+	background-color: #fff;
+	
+}
+.cart-container h1 {
+	
+}
+
+
+#clear-cart {
+	
+		
+}
+
+.delete-item {
+	float: right;
+	font-size: 8px;
+	
+}
+
+
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Check Out</title>
+    <link type="text/css" rel="stylesheet" href="/cs313/cs313_stef/week03/styles.css" media="screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	
+    </head>
+
+<body>
+    
+    <main class="checkout-page">
+    
+		
+    
+    <div class="cart-container">
+		<h1 class="shopping_headline">Checkout</h1>
+		<div>
+		<form action="checkoutform.php" method="post">
+Full Name: <input type="text" name="name"><br><br>
+Address:   <input type="text" name="address"><br><br>
+			<input type="radio" name="card" value="Visa" id="major-cs"><label for="cc-visa">Visa</label><br />
+			<input type="radio" name="card" value="Mastercard" id="major-wdd"><label for="cc-mastercard">Mastercard</label><br />
+			<input type="radio" name="card" value="American Express" id="cc-amex"><label for="major-cit">American Express</label><br />
+			<input type="radio" name="card" value="Discover" id="cc-discover"><label for="major-ce">Discover</label><br />
+			<br />
+			<p id="show-cart">
+		<!-- -->	
+		
+		</p>
+			<div>Total Purchase: $<span id="total-cart"></span></div><br>
+<input type="submit">
+</form>
+		
+		
+		</div>    
+    
+    
+		</div>
+		
+	</main>	
+    <footer>
+    
+    </footer>
+
+    
+    </body>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="shopping.js"></script>
+</html>

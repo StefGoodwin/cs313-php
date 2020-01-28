@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>STEF GOODWIN'S PAGE</title>
-        <link type="text/css" rel="stylesheet" href="/styles.css" media="screen">
+        <link type="text/css" rel="stylesheet" href="/cs313/cs313_stef/styles.css" media="screen">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         
         
@@ -22,7 +22,12 @@
             
                     <h1>Stef's Assignments CS-313</h1>
                 <div class="assignment-box">
-                    <p>COMING SOON!</p>
+                    <ul class="assignments">
+					<li><a href="week03/shopping.php">Week 3 Assignment</a></li>
+					
+					
+					
+					</ul>
                 
                 
                 </div>
