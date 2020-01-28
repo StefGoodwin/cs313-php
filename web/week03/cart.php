@@ -23,7 +23,7 @@
 		<div>Total Cart:$<span id="total-cart"></span></div>
 		<p><button onclick="clearCart()" id="clear-cart">Clear Cart</button></p>
 		<p><button onclick="window.location.href = 'shopping.php';" id="">Continue Shopping</button></p>
-		<p><button onclick="window.location.href = 'checkout.php';" id="">Checkout</button></p>
+		<p><button onclick="window.location.href = 'checkout.html';" id="">Checkout</button></p>
 		</div>
 		
 		
