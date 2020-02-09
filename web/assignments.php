@@ -24,6 +24,7 @@
                 <div class="assignment-box">
                     <ul class="assignments">
 					<li><a href="week03/shopping.php">Week 3 Assignment</a></li>
+					<li><a href="project/artist-form.html">Project</a></li>
 					
 					
 					
