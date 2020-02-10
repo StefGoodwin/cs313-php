@@ -12,14 +12,7 @@ require('dbConnect.php');
     <title>Artist Form</title>
   </head>
   <body>
-    <p><?php
-            foreach ($db->query('SELECT artist_name, artist_medium, artist_description FROM artists')AS $row)
-            {
-                echo '<b>' . $row['artist_name'] . " " . $row['artist_medium'] . ":" . $row['artist_description'] . "-" . '</b>';
-                echo '"' . $row['item'] . '"'. "<br/>";
-            }
-            ?>
-        </p>
+
     <h1>Artist Search</h1>
     <form class="artistform" action="aritst-details.php" method="post">
       Artist Name: <input type="text" name="artist_name" value="artist"><br><br>
