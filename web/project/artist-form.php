@@ -13,7 +13,7 @@ require('dbConnect.php');
   </head>
   <body>
     <p><?php
-            foreach ($db->query('SELECT artist_name, artist_medium, artist_description, FROM artists')AS $row)
+            foreach ($db->query('SELECT artist_name, artist_medium, artist_description FROM artists')AS $row)
             {
                 echo '<b>' . $row['artist_name'] . " " . $row['artist_medium'] . ":" . $row['artist_description'] . "-" . '</b>';
               //  echo '"' . $row['content'] . '"'. "<br/>";
