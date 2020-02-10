@@ -22,7 +22,7 @@ require('dbConnect.php');
         </p>
     <h1>Artist Search</h1>
     <form class="artistform" action="aritst-details.php" method="post">
-      Artist Name: <input type="text" name="aname" value="artist"><br><br>
+      Artist Name: <input type="text" name="artist_name" value="artist"><br><br>
 
     </form>
   </body>
