@@ -14,7 +14,7 @@ require('dbConnect.php');
   <body>
 
     <h1>Artist Search</h1>
-    <form class="artistform" action="aritst-details.php" method="post">
+    <form class="artistform" action="artist-details.php" method="post">
       Artist Name: <input type="text" name="artist_name" value="artist"><br><br>
                   <input type="submit" value="Submit">
 
