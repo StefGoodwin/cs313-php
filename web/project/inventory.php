@@ -11,9 +11,9 @@ require('dbConnect.php');
   <body>
 <?php
 
-foreach($db->query('SELECT id, artist_name, artist_medium, artist_description FROM artists WHERE id = ' . $_GET['id']) AS $row) {
+foreach($db->query('SELECT artist_id, artist_name, artist_medium, artist_description FROM artists WHERE artist_id = ' . $_GET['artist_id']) AS $row) {
 
-    echo $row['artist_name'] . " " . $row['artist_medium'] . ":" . $row['artist_description'] . "- " . $row['content'];
+    echo $row['artist_name'] . " " . $row['artist_medium'] . ":" . $row['artist_description']; 
 
 }
 ?>
