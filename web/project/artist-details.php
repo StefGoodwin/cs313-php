@@ -11,11 +11,21 @@ require('dbConnect.php');
   <body>
 
     <p><?php
-            foreach ($db->query('SELECT id, artist_name, artist_medium, artist_description FROM artists')AS $row)
-            {
-                echo '<b>' . $row['artist_name'] . " " . $row['artist_medium'] . ":" . $row['artist_description'] . "-" . '</b>';
-                echo '"' . $row['item'] . '"'. "<br/>";
-            }
+    $statement = $db->prepare("SELECT artist_name, artist_medium, artist_description FROM artists");
+    $statement->execute();
+
+      while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+  {
+  	// The variable "row" now holds the complete record for that
+  	// row, and we can access the different values based on their
+  	// name
+  	$artist = $row['artist_name'];
+  	$medium = $row['artist_medium'];
+  	$description = $row['artist_description'];
+
+
+  	echo "<p><strong>$artist $medium </strong> - \"$description\"<p>";
+  }
             ?>
         </p>
   </body>
