@@ -11,7 +11,7 @@ require('dbConnect.php');
   <body>
 
     <p><?php
-    $statement = $db->prepare("SELECT artist_name, artist_medium, artist_description FROM artists, merchandise WHERE artist.id=merchandise.id");
+    $statement = $db->prepare("SELECT artist_name, artist_medium, artist_description FROM artists, merchandise WHERE artist.id=artist.id");
     $statement->execute();
 
       while ($row = $statement->fetch(PDO::FETCH_ASSOC))
@@ -22,6 +22,7 @@ require('dbConnect.php');
   	$artist = $row['artist_name'];
   	$medium = $row['artist_medium'];
   	$description = $row['artist_description'];
+    $price = $row['price'];
 
 
   	echo "<p><strong>$artist $medium </strong> - \"$description\"<p>";
