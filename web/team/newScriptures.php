@@ -47,7 +47,7 @@ require ('dbConnect.php');
     $stmt=$db->prepare('SELECT id, name, FROM topic');
     $stmt->execute();
     $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+    var_dump($topics);
       foreach($topics as $topic) {
     	$topic_id = $topic['id'];
     	$topic_name = $topic['name'];
