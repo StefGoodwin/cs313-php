@@ -43,7 +43,7 @@ require ('dbConnect.php');
 
                               }-->
     <?php
-    $db->prepare('SELECT name, id FROM topic;') AS $topics;
+    $topics=$db->prepare('SELECT name, id FROM topic;');
     $topics->execute();
       foreach($topics as $topic) {
     	$topic_id = $topic['id'];
