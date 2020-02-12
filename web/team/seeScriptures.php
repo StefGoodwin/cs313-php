@@ -5,7 +5,7 @@ $book = htmlspecialchars($_POST['book']);
 $chapter = htmlspecialchars($_POST['chapter']);
 $verse = htmlspecialchars($_POST['verse']);
 $content = htmlspecialchars($_POST['content']);
-$topic =array($_POST['topic']);
+//$topic =($_POST['topic_name']);
 
 var_dump($_POST);
 ?>
