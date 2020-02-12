@@ -24,6 +24,11 @@ CREATE TABLE merchandise (
 	FOREIGN KEY (artist_id) REFERENCES artists(id)
 );	
 
+CREATE TABLE artist_merchandise (
+	artist_id INT NOT NULL REFERENCES artists(id),
+	merch_id INT NOT NULL REFERENCES merchandise(id)
+);
+
 ALTER TABLE artists
 ADD FOREIGN KEY (artist_name) REFERENCES merchandise(artist_name);
 

@@ -1,5 +1,5 @@
 <?php
-require('dbConnect.php');
+require 'dbConnect.php';
 
 ?>
 
@@ -15,7 +15,8 @@ require('dbConnect.php');
 
     <h1>Artist Search</h1>
     <form class="artistform" action="artist-details.php" method="post">
-      Artist Name: <input type="text" name="artist" value="artist"><br><br>
+       <input type="text" id="artistBox" name="artist">
+       <label for="artsitBox">Artist</label><br><br>
                   <input type="submit" value="Submit">
 
     </form>

@@ -1,12 +1,25 @@
 <?php
 require 'dbConnect.php';
-/*$book = htmlspecialchars($_POST['book']);
+$book = htmlspecialchars($_POST['book']);
 $chapter = htmlspecialchars($_POST['chapter']);
 $verse = htmlspecialchars($_POST['verse']);
-$content = htmlspecialchars($_POST['content']);*/
-//$topic =($_POST['topic_name']);
+$content = htmlspecialchars($_POST['content']);
+$topic =($_POST['topic_name']);
+if (isset($_POST[1])) {
+  $faith = $_POST[1];
 
-var_dump($_POST);
+}
+if (isset($_POST[2])) {
+  $sacrifice = $_POST[2];
+
+}
+if (isset($_POST[3])) {
+  $charity = $_POST[3];
+
+}
+
+
+//var_dump($_POST);
 ?>
 
 <!doctype html>
@@ -20,10 +33,6 @@ var_dump($_POST);
 <h2>Results</h2>
 <?php
 
-//foreach ($db->query('SELECT id, book, chapter, verse, content FROM scriptures WHERE book = \'' .  $_POST['book'] . '\';') AS $row) {
-
-  //  echo '<a href="details.php?id=' . $row['id'] .'">' .  $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . '</a>';
-//}
 ?>
 
 
