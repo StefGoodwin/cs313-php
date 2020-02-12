@@ -1,6 +1,5 @@
 <?php
-session_start();
-require('dbConnect.php');
+require 'dbConnect.php';
 $book = htmlspecialchars($_POST['book']);
 $chapter = htmlspecialchars($_POST['chapter']);
 $verse = htmlspecialchars($_POST['verse']);
