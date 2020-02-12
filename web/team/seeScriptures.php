@@ -1,6 +1,12 @@
 <?php
 session_start();
 require('dbConnect.php');
+$book = htmlspecialchars($_POST['book']);
+$chapter = htmlspecialchars($_POST['chapter']);
+$verse = htmlspecialchars($_POST['verse']);
+$content = htmlspecialchars($_POST['content']);
+$topic =array($_POST['topic']);
+
 var_dump($_POST);
 ?>
 
@@ -15,11 +21,12 @@ var_dump($_POST);
 <h2>Results</h2>
 <?php
 
-foreach ($db->query('SELECT id, book, chapter, verse, content FROM scriptures WHERE book = \'' .  $_POST['book'] . '\';') AS $row) {
+//foreach ($db->query('SELECT id, book, chapter, verse, content FROM scriptures WHERE book = \'' .  $_POST['book'] . '\';') AS $row) {
 
     echo '<a href="details.php?id=' . $row['id'] .'">' .  $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . '</a>';
 }
 ?>
+
 
 
 

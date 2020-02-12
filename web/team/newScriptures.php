@@ -1,5 +1,6 @@
 <?php
 require ('dbConnect.php');
+$db->query('SELECT name, id FROM topic;') AS $topics
 ?>
 <!doctype html>
 <html lang="en"><head>
@@ -22,6 +23,7 @@ require ('dbConnect.php');
          <form action="results.php" method="post">
             Book: <input type="text" name="book"><br>
             <input type="submit">
+          </form>
 
 
             <h2>New Scripture</h2>
@@ -32,15 +34,25 @@ require ('dbConnect.php');
             Verse: <input type="text" name="verse"><br>
             Content: <textarea name="content"></textarea><br>
             Topic/s: <br>
-            <?php
-                        foreach ($db->query('SELECT name FROM topic;') AS $topics)
+
+                        <!--foreach ($db->query('SELECT name FROM topic;') AS $topics)
                         {
                           echo '<input type="checkbox" name="topic[]" value="' . $topics['name'] .
                                 '"><label for="' . $topics['name'] . '">' . $topics['name']. '</label> <br>';
 
 
-                              }
+                              }-->
+    <?php
+      foreach($topics as $topic) {
+    	$topic_id = $topic['id'];
+    	$topic_name = $topic['name'];
+    	echo '<input type="checkbox" name=$topic_id value=$topic_name>
+              <label for=$topic_id>$topic_name</label><br>';
+    }
+
 ?>
+  <input type="submit" value="Add Scripture">
+
 </form>
     </body>
 
