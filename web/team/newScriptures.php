@@ -11,12 +11,12 @@ require ('dbConnect.php');
 </head>
     <body>
         <h2> Scripture Resources</h2>
-        <p><?php
+        <p><?php/*
             foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures')AS $row)
             {
                 echo '<b>' . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "-" . '</b>';
                 echo '"' . $row['content'] . '"'. "<br/>";
-            }
+            }*/
           ?>
         </p>
 
@@ -44,8 +44,10 @@ require ('dbConnect.php');
                               }*/
                               ?>
   <?php
-    $topics=$db->prepare('SELECT id, name, FROM topic;');
-    $topics->execute();
+    $stmt=$db->prepare('SELECT id, name, FROM topic');
+    $stmt->execute();
+    $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
       foreach($topics as $topic) {
     	$topic_id = $topic['id'];
     	$topic_name = $topic['name'];
