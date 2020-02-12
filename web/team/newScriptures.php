@@ -44,7 +44,7 @@ require ('dbConnect.php');
                               }*/
                               ?>
   <?php
-    $stmt=$db->prepare('SELECT id, name, FROM topic');
+    $stmt=$db->prepare('SELECT id, name FROM topic;');
     $stmt->execute();
     $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
     var_dump($topics);
