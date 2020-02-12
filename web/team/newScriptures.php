@@ -43,7 +43,7 @@ require ('dbConnect.php');
 
                               }-->
     <?php
-    $topics=$db->prepare('SELECT name, id FROM topic;');
+  /*  $topics=$db->prepare('SELECT name, id FROM topic;');
     $topics->execute();
       foreach($topics as $topic) {
     	$topic_id = $topic['id'];
@@ -51,7 +51,7 @@ require ('dbConnect.php');
     	echo "<input type='checkbox' name=$topic_id[] value=$topic_name>
               <label for=$topic_id>$topic_name</label><br>";
     }
-    die();
+    die();*/
 ?>
 
   <input type="submit" value="Add Scripture">
