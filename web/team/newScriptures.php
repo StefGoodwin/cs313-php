@@ -1,6 +1,6 @@
 <?php
 require ('dbConnect.php');
-$db->query('SELECT name, id FROM topic;') AS $topics;
+
 ?>
 <!doctype html>
 <html lang="en"><head>
@@ -43,14 +43,17 @@ $db->query('SELECT name, id FROM topic;') AS $topics;
 
                               }-->
     <?php
+    $db->query('SELECT name, id FROM topic;') AS $topics;
+    $topics->execute();
       foreach($topics as $topic) {
     	$topic_id = $topic['id'];
     	$topic_name = $topic['name'];
     	echo '<input type="checkbox" name=$topic_id value=$topic_name>
               <label for=$topic_id>$topic_name</label><br>';
     }
-
+    die();
 ?>
+
   <input type="submit" value="Add Scripture">
 
 </form>
