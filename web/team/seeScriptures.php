@@ -1,9 +1,9 @@
 <?php
 require 'dbConnect.php';
-$book = htmlspecialchars($_POST['book']);
+/*$book = htmlspecialchars($_POST['book']);
 $chapter = htmlspecialchars($_POST['chapter']);
 $verse = htmlspecialchars($_POST['verse']);
-$content = htmlspecialchars($_POST['content']);
+$content = htmlspecialchars($_POST['content']);*/
 //$topic =($_POST['topic_name']);
 
 var_dump($_POST);
