@@ -1,6 +1,6 @@
 <?php
 require ('dbConnect.php');
-$db->query('SELECT name, id FROM topic;') AS $topics
+$db->query('SELECT name, id FROM topic;') AS $topics;
 ?>
 <!doctype html>
 <html lang="en"><head>
