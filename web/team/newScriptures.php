@@ -47,11 +47,13 @@ require ('dbConnect.php');
     $stmt=$db->prepare('SELECT id, name FROM topic;');
     $stmt->execute();
     $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($topics);
+    //var_dump($topics);
       foreach($topics as $topic) {
     	$topic_id = $topic['id'];
     	$topic_name = $topic['name'];
-    	echo "<input type='checkbox' name=$topic_id value=$topic_name>";
+      echo"<label for=" $topic_id "> $topic_name </label> ";
+    	echo "<input type='checkbox' name=$topic_id value=$topic_name><br>";
+
     }
 
 ?>
