@@ -34,24 +34,24 @@ require ('dbConnect.php');
             Verse: <input type="text" name="verse"><br>
             Content: <textarea name="content"></textarea><br>
             Topic/s: <br>
-
-                        <!--foreach ($db->query('SELECT name FROM topic;') AS $topics)
+<?php/*
+                        foreach ($db->query('SELECT id, name FROM topic;') AS $topics)
                         {
                           echo '<input type="checkbox" name="topic[]" value="' . $topics['name'] .
                                 '"><label for="' . $topics['name'] . '">' . $topics['name']. '</label> <br>';
 
 
-                              }-->
-    <?php
-  /*  $topics=$db->prepare('SELECT name, id FROM topic;');
+                              }*/
+                              ?>
+  <?php
+    $topics=$db->prepare('SELECT id, name, FROM topic;');
     $topics->execute();
       foreach($topics as $topic) {
     	$topic_id = $topic['id'];
     	$topic_name = $topic['name'];
-    	echo "<input type='checkbox' name=$topic_id[] value=$topic_name>
-              <label for=$topic_id>$topic_name</label><br>";
+    	echo "<input type='checkbox' name=$topic_id value=$topic_name>";
     }
-    die();*/
+
 ?>
 
   <input type="submit" value="Add Scripture">
