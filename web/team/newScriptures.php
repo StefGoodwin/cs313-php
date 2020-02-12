@@ -43,13 +43,13 @@ require ('dbConnect.php');
 
                               }-->
     <?php
-    $db->query('SELECT name, id FROM topic;') AS $topics;
+    $db->prepare('SELECT name, id FROM topic;') AS $topics;
     $topics->execute();
       foreach($topics as $topic) {
     	$topic_id = $topic['id'];
     	$topic_name = $topic['name'];
-    	echo '<input type="checkbox" name=$topic_id value=$topic_name>
-              <label for=$topic_id>$topic_name</label><br>';
+    	echo "<input type='checkbox' name=$topic_id[] value=$topic_name>
+              <label for=$topic_id>$topic_name</label><br>";
     }
     die();
 ?>
