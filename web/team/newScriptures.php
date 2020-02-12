@@ -51,8 +51,8 @@ require ('dbConnect.php');
       foreach($topics as $topic) {
     	$topic_id = $topic['id'];
     	$topic_name = $topic['name'];
-      echo"<label for=" $topic_id "> $topic_name </label> ";
-    	echo "<input type='checkbox' name=$topic_id value=$topic_name><br>";
+
+    	echo "<label for='$topic_id'> $topic_name </label><input type='checkbox' name='$topic_id' value='$topic_name'><br>";
 
     }
 
