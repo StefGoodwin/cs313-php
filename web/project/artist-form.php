@@ -24,6 +24,22 @@ require 'dbConnect.php';
       <label for="artistDescription">Artist Description</label><br>
       <input type="text" id="artistDescription" name="artistDescription"><br><br>
 
+      <label for="merchItem">Merchandise Item</label><br>
+      <input type="text" id="merchItem" name="merchItem"><br><br>
+
+      <label for="merchSize">Size if Applicable N/A if not</label><br>
+      <input type="text" id="merchSize" name="merchSize"><br><br>
+
+      <label for="merchQuanitiy">Quantity</label><br>
+      <input type="text" id="merchQuanitiy" name="merchQuanitiy"><br><br>
+
+      <label for="merchPrice">Price</label><br>
+      <input type="text" id="merchPrice" name="merchPrice"><br><br>
+
+      <label for="merchDescr">Merchandise Description</label><br>
+      <input type="text" id="merchDescr" name="merchDescr"><br><br>    
+
+
                   <input type="submit" value="Add to Database">
 
     </form>
