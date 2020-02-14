@@ -1,5 +1,5 @@
 <?php
-require 'dbConnect.php';
+require("dbConnect.php");
 
 ?>
 
@@ -37,7 +37,7 @@ require 'dbConnect.php';
       <input type="text" id="merchPrice" name="merchPrice"><br><br>
 
       <label for="merchDescr">Merchandise Description</label><br>
-      <input type="text" id="merchDescr" name="merchDescr"><br><br>    
+      <input type="text" id="merchDescr" name="merchDescr"><br><br>
 
 
                   <input type="submit" value="Add to Database">
