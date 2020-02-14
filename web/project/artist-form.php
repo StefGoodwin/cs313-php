@@ -14,10 +14,17 @@ require 'dbConnect.php';
   <body>
 
     <h1>Artist Search</h1>
-    <form class="artistform" action="artist-details.php" method="post">
-       <input type="text" id="artistBox" name="artist">
-       <label for="artsitBox">Artist</label><br><br>
-                  <input type="submit" value="Submit">
+    <form id="artistForm" action="insert-artist.php" method="POST">
+      <label for="artistName">Artist Name</label><br>
+      <input type="text" id="artistName" name="artistName"><br><br>
+
+      <label for="artistMedium">Artist Medium</label><br>
+      <input type="text" id="artistMedium" name="artistMedium"><br><br>
+
+      <label for="artistDescription">Artist Description</label><br>
+      <input type="text" id="artistDescription" name="artistDescription"><br><br>
+
+                  <input type="submit" value="Add to Database">
 
     </form>
   </body>
