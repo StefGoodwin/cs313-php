@@ -55,7 +55,7 @@ $statement->execute();
 	die();
 }
 
-header("Location: aritst-details.php");
+header("Location: artist-details.php");
  die();
 
 ?>
