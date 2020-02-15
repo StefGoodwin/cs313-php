@@ -31,8 +31,8 @@ $statement->bindValue(':medium', $medium);
 $statement->bindValue(':artDesc', $artDesc);
 $statement->execute();
 }
-catch (/Exception $ex) {
-  echo "Error with DB. Details: $ex";
+catch (/Exception $e) {
+  echo "Error with DB. Details: $e";
 }
 
 try
@@ -51,8 +51,8 @@ $statement->execute();
   echo "Error with DB. Details: $ex";
 	die();
 }
-
+/*
 header("Location: artist-details.php");
  die();
-
+*/
 ?>
