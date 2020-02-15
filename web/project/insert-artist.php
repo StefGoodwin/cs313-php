@@ -31,10 +31,10 @@ $statement->bindValue(':medium', $medium);
 $statement->bindValue(':artDesc', $artDesc);
 $statement->execute();
 }
-catch (/Exception $e) {
+catch (\Exception $e) {
   echo "Error with DB. Details: $e";
 }
-die();
+
 try
 {
 $query = 'INSERT INTO merchandise(item, merch_size, price, quantity, merch_description) VALUES(:item, :size, :price, :quantity, :merchDescr)';
@@ -47,7 +47,7 @@ $statement->bindValue(':quantity', $quantity);
 $statement->bindValue(':merchDescr', $merchDescr);
 $statement->execute();
 
-} catch (/Exception $ex) {
+} catch (\Exception $ex) {
   echo "Error with DB. Details: $ex";
 	die();
 }
