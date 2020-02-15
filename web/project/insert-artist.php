@@ -32,6 +32,8 @@ $statement->bindValue(':artDesc', $artDesc);
 $statement->execute();
 }
 
+try
+{
 $query = 'INSERT INTO merchandise(item, merch_size, price, quantity, merch_description) VALUES(:item, :size, :price, :quantity, :merchDescr)';
 $statement = $db->prepare($query);
 
