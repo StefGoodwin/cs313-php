@@ -7,7 +7,7 @@ require("dbConnect.php");
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link type="text/css" rel="stylesheet" href="/cs313/cs313_stef/styles.css" media="screen">
+    <link type="text/css" rel="stylesheet" href="/styles.css" media="screen">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artist Form</title>
   </head>
