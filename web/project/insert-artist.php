@@ -25,12 +25,17 @@ try
 {
 $query = 'INSERT INTO artists(artist_name, artist_medium, artist_description) VALUES(:artist, :medium, :artDesc)';
 $statement = $db->prepare($query);
-$query = 'INSERT INTO merchandise(item, merch_size, price, quantity, merch_description) VALUES(:item, :size, :price, :quantity, :merchDescr)';
-$statement = $db->prepare($query);
 
 $statement->bindValue(':artist', $artist);
 $statement->bindValue(':medium', $medium);
 $statement->bindValue(':artDesc', $artDesc);
+$statement->execute();
+}
+
+$query = 'INSERT INTO merchandise(item, merch_size, price, quantity, merch_description) VALUES(:item, :size, :price, :quantity, :merchDescr)';
+$statement = $db->prepare($query);
+
+
 $statement->bindValue(':item', $item);
 $statement->bindValue(':size', $size);
 $statement->bindValue(':price', $price);
