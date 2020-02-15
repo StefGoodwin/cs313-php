@@ -34,7 +34,7 @@ $statement->execute();
 catch (/Exception $e) {
   echo "Error with DB. Details: $e";
 }
-
+die();
 try
 {
 $query = 'INSERT INTO merchandise(item, merch_size, price, quantity, merch_description) VALUES(:item, :size, :price, :quantity, :merchDescr)';
