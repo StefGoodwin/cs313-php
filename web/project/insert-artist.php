@@ -31,7 +31,8 @@ $statement->bindValue(':medium', $medium);
 $statement->bindValue(':artDesc', $artDesc);
 $statement->execute();
 }
-
+die();
+/*
 try
 {
 $query = 'INSERT INTO merchandise(item, merch_size, price, quantity, merch_description) VALUES(:item, :size, :price, :quantity, :merchDescr)';
@@ -49,7 +50,7 @@ $statement->execute();
   echo "Error with DB. Details: $ex";
 	die();
 }
-
+*/
 header("Location: aritst-details.php");
  die();
 
