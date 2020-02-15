@@ -23,9 +23,10 @@ require("dbConnect.php");
 
 try
 {
-$query = 'INSERT INTO artists(artist_id, artist_name, artist_medium, artist_description) VALUES(:artist, :medium, :artDesc)';
+$query = 'INSERT INTO artists(artist_id, artist_name, artist_medium, artist_description) VALUES(:artistId, :artist, :medium, :artDesc)';
 $statement = $db->prepare($query);
 
+$statement->bindValue(':artist', $artist_id);
 $statement->bindValue(':artist', $artist);
 $statement->bindValue(':medium', $medium);
 $statement->bindValue(':artDesc', $artDesc);
@@ -38,9 +39,10 @@ catch (\Exception $ex) {
 
 try
 {
-$query = 'INSERT INTO merchandise(artist_id, item, merch_size, price, quantity, merch_description) VALUES(:item, :size, :price, :quantity, :merchDescr)';
+$query = 'INSERT INTO merchandise(artist_id, item, merch_size, price, quantity, merch_description) VALUES(:artistId, :item, :size, :price, :quantity, :merchDescr)';
 $statement = $db->prepare($query);
 
+$statement->bindValue(':artist', $artist_id);
 $statement->bindValue(':item', $item);
 $statement->bindValue(':size', $size);
 $statement->bindValue(':price', $price);
