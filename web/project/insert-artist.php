@@ -33,7 +33,7 @@ $statement->execute();
 }
 catch (\Exception $ex) {
   echo "Error with DB. Details: $ex";
-	
+
 }
 
 
@@ -42,7 +42,6 @@ try
 {
 $query = 'INSERT INTO merchandise(item, merch_size, price, quantity, merch_description) VALUES(:item, :size, :price, :quantity, :merchDescr)';
 $statement = $db->prepare($query);
-
 
 $statement->bindValue(':item', $item);
 $statement->bindValue(':size', $size);

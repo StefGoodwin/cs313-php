@@ -8,6 +8,7 @@ CREATE TABLE logins (
 	
 CREATE TABLE artists (
 	id SERIAL PRIMARY KEY,
+	artist_id INT NOT NULL,
 	artist_name VARCHAR(50) NOT NULL,
 	artist_medium VARCHAR(50) NOT NULL,
 	artist_description VARCHAR(255) NOT NULL
@@ -15,13 +16,12 @@ CREATE TABLE artists (
 	
 CREATE TABLE merchandise (
 	id SERIAL PRIMARY KEY,
-	artist_id INT NOT NULL,
+	artist_id INT NOT NULL REFERENCES artists(artist_id),
 	item VARCHAR(150) NOT NULL,
 	merch_size VARCHAR(10) NOT NULL,
 	price INT NOT NULL,
 	quantity INT NOT NULL,
-	merch_description VARCHAR(255) NOT NULL,
-	FOREIGN KEY (artist_id) REFERENCES artists(id)
+	merch_description VARCHAR(255) NOT NULL	
 );	
 
 CREATE TABLE artist_merchandise (
@@ -61,6 +61,8 @@ ALTER TABLE artists DROP merch_id;
 
 ALTER TABLE artists DROP artist_id; 
 
+ALTER TABLE merchandise DROP artist_id; 
+
 ALTER TABLE artists ADD id  SERIAL PRIMARY KEY;
  
 ALTER TABLE merchandise ADD id SERIAL PRIMARY KEY;
@@ -78,5 +80,7 @@ INSERT INTO merchandise (artist_id, item, merch_size, price, quantity, merch_des
 INSERT INTO merchandise (artist_id, item, merch_size, price, quantity, merch_description) VALUES (3, 'canvas photography', '11 x 17', '60', '3', 'Bell Rock in Winter');
 
 DELETE FROM merchandise WHERE id= 2;
+
+ALTER TABLE merchandise ADD FOREIGN KEY (id) REFERENCES artists(id);
 
 
