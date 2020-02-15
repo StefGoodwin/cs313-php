@@ -8,7 +8,6 @@ CREATE TABLE logins (
 	
 CREATE TABLE artists (
 	id SERIAL PRIMARY KEY,
-	artist_id INT NOT NULL,
 	artist_name VARCHAR(50) NOT NULL,
 	artist_medium VARCHAR(50) NOT NULL,
 	artist_description VARCHAR(255) NOT NULL
@@ -16,7 +15,6 @@ CREATE TABLE artists (
 	
 CREATE TABLE merchandise (
 	id SERIAL PRIMARY KEY,
-	artist_id INT NOT NULL REFERENCES artists(artist_id),
 	item VARCHAR(150) NOT NULL,
 	merch_size VARCHAR(10) NOT NULL,
 	price INT NOT NULL,

@@ -31,7 +31,7 @@ $statement->bindValue(':medium', $medium);
 $statement->bindValue(':artDesc', $artDesc);
 $statement->execute();
 }
-catch (Exception $ex) {
+catch (/Exception $ex) {
   echo "Error with DB. Details: $ex";
 
 
@@ -47,12 +47,12 @@ $statement->bindValue(':quantity', $quantity);
 $statement->bindValue(':merchDescr', $merchDescr);
 $statement->execute();
 
-} catch (Exception $ex) {
+} catch (/Exception $ex) {
   echo "Error with DB. Details: $ex";
 	die();
 }
-/*
+
 header("Location: artist-details.php");
  die();
-*/
+
 ?>
