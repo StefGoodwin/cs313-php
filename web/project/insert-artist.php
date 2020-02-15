@@ -31,10 +31,7 @@ $statement->bindValue(':medium', $medium);
 $statement->bindValue(':artDesc', $artDesc);
 $statement->execute();
 }
-catch (\Exception $ex) {
-  echo "Error with DB. Details: $ex";
 
-}
 
 try
 {
