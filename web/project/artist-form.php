@@ -13,7 +13,7 @@ require("dbConnect.php");
   </head>
   <body>
 
-    <h1>Artist Search</h1>
+    <h1>Artist Add</h1>
     <form id="artistForm" action="insert-artist.php" method="POST">
       <label for="artistName">Artist Name</label><br>
       <input type="text" id="artistName" name="artistName"><br><br>
@@ -43,5 +43,14 @@ require("dbConnect.php");
                   <input type="submit" value="Add to Database">
 
     </form>
+
+    <h1>Artist Add</h1>
+    <form id="artistForm" action="deleteArtist.php" method="POST">
+      <label for="artistName">Artist Name</label><br>
+      <input type="text" id="artistName" name="artistName"><br><br>
+      <input type="submit" value="Add to Database">
+
+</form>
+
   </body>
 </html>
