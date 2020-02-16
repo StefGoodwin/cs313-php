@@ -1,5 +1,5 @@
 <?php
-$id = $_POST['artistName'];
+$id = $_POST['ID'];
 /*$medium = $_POST['artistMedium'];
 $artDesc = $_POST['artistDescription'];
 $item = $_POST['merchItem'];
@@ -21,8 +21,8 @@ echo "merchDescr =$merchDescr\n";
 */
 require("dbConnect.php");
 
-$query='DELETE * FROM artists WHERE id = ?';
-$db->prepare($query)->execute([$_POST['id']]);
+$query='DELETE * FROM artists WHERE ID = ?';
+$db->prepare($query)->execute([$_POST['ID']]);
 
 header('location:artist-details.php');
 die();
