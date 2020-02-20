@@ -44,13 +44,15 @@ require("dbConnect.php");
 
     </form>
 
-    <h1>Artist Add</h1>
+    <h1>Remove Artist</h1>
     <form id="artistForm" action="deleteArtist.php" method="POST">
       <label for="artistName">Artist Name</label><br>
       <input type="text" id="artistName" name="artistName"><br><br>
-      <input type="submit" value="Add to Database">
+      <input type="submit" value="Delete from Database">
 
-</form>
+    </form>
+
+    
 
   </body>
 </html>

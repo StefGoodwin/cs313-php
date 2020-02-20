@@ -16,13 +16,13 @@ require("dbConnect.php");
       $statement->execute();
 
     }
-
+/*
     try {
       $statement = $db->prepare('SELECT artist_id, item, merch_size, price, quantity, merch_description FROM merchandise');
       $statement->execute();
 
     }
-
+*/
     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	{
 		echo '<p>';

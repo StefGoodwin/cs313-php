@@ -1,5 +1,4 @@
 <?php
-$id = $_POST['ID'];
 /*$medium = $_POST['artistMedium'];
 $artDesc = $_POST['artistDescription'];
 $item = $_POST['merchItem'];
@@ -19,12 +18,17 @@ echo "price =$price\n";
 echo "item =$item\n";
 echo "merchDescr =$merchDescr\n";
 */
+//use $_GET['ID'] to get id from querystring
 require("dbConnect.php");
 
-$query='DELETE * FROM artists WHERE ID = ?';
-$db->prepare($query)->execute([$_POST['ID']]);
 
-header('location:artist-details.php');
-die();
+$query='DELETE FROM artists WHERE ID = :id';
+$stmt = $db->prepare($query);
+$stmt->bindValue(':id', $_GET['id']);
+$stmt->execute();
+
+//echo $stmt->rowcount();
+ header('location:artist-details.php');
+ die();
 
 ?>
