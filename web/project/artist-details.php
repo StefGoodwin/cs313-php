@@ -12,7 +12,7 @@ require("dbConnect.php");
 
     <p><?php
     try {
-      $statement = $db->prepare('SELECT artist_id, artist_name, artist_medium, artist_description FROM artists');
+      $statement = $db->prepare('SELECT id, artist_name, artist_medium, artist_description FROM artists');
       $statement->execute();
 
 
