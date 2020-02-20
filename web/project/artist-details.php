@@ -18,7 +18,7 @@ require("dbConnect.php");
     }
 /*
     try {
-      $statement = $db->prepare('SELECT artist_id, item, merch_size, price, quantity, merch_description FROM merchandise');
+      $statement = $db->prepare('SELECT id, item, merch_size, price, quantity, merch_description FROM merchandise');
       $statement->execute();
 
     }
@@ -27,15 +27,17 @@ require("dbConnect.php");
 	{
 		echo '<p>';
 		echo '<strong>' . $row['artist_name'] . ' ' . $row['artist_medium'] . ':';
-		echo $row['artist_description'] . '</strong>' . ' - ' . $row['item'];
-		echo '<br />';
+		echo $row['artist_description'] . '</strong>';
+    echo " <a href='deleteArtist.php?id=" . $row['id'] ."'>Delete</a> "; //Link to delete artist page with id to delete
+		echo '</p><br />';
 
-    $stmtItems = $db->prepare('SELECT artist_name FROM artists a'
-			. ' INNER JOIN merchandise m ON m.artist_id = a.id'
-			. ' WHERE m.artist_id = :artistId');
+    $stmtItems = $db->prepare('SELECT item FROM merchandise m'
+    .' INNER JOIN artist_merchandise am ON m.id = am.merch_id'
+    .' INNER JOIN artists a ON a.id = am.artist_id WHERE a.id = :artistId');
 
 		$stmtItems->bindValue(':artistId', $row['id']);
 		$stmtItems->execute();
+
 
 		// Go through each topic in the result
 		while ($itemRow = $stmtItems->fetch(PDO::FETCH_ASSOC))
