@@ -24,6 +24,8 @@ require("dbConnect.php");
       <label for="artistDescription">Artist Description</label><br>
       <input type="text" id="artistDescription" name="artistDescription"><br><br>
     </form><br><br>
+    
+    <input type="submit" value="Add to Database">
 
     <h1>Add Merchandise</h1>
     <form id="artistForm" action="insert-artist.php" method="POST">
@@ -45,7 +47,7 @@ require("dbConnect.php");
 
                   <input type="submit" value="Add to Database">
 
-    
+
     <h1>Remove Artist</h1>
     <form id="artistForm" action="deleteArtist.php" method="POST">
       <label for="artistName">Artist Name</label><br>
