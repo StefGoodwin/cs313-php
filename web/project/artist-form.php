@@ -23,7 +23,7 @@ require("dbConnect.php");
 
       <label for="artistDescription">Artist Description</label><br>
       <input type="text" id="artistDescription" name="artistDescription"><br><br>
-      <input type="submit" value="Add to Database">
+      <input type="submit" value="Add Artist">
       <br><br>
 
 
@@ -43,7 +43,7 @@ require("dbConnect.php");
 
       <label for="merchDescr">Merchandise Description</label><br>
       <input type="text" id="merchDescr" name="merchDescr"><br><br>
-      <input type="submit" value="Add to Database">
+      <input type="submit" value="Add to Merchandise">
     </form>
 
 

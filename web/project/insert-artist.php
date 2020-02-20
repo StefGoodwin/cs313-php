@@ -49,7 +49,7 @@ $statement->execute();
 
 } catch (\Exception $ex) {
   echo "Error with DB. Details: $ex";
-	die();
+	
 }
 
 header("Location: artist-details.php");
