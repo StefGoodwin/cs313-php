@@ -15,7 +15,7 @@ require("dbConnect.php");
       $statement = $db->prepare('SELECT artist_id, artist_name, artist_medium, artist_description FROM artists');
       $statement->execute();
 
-    }
+
 /*
     try {
       $statement = $db->prepare('SELECT id, item, merch_size, price, quantity, merch_description FROM merchandise');
@@ -48,7 +48,7 @@ require("dbConnect.php");
 		echo '</p>';
 	}
 
-
+}
 catch (PDOException $ex)
 {
 	echo "Error with DB. Details: $ex";
