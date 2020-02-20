@@ -28,7 +28,7 @@ require("dbConnect.php");
 		echo '<p>';
 		echo '<strong>' . $row['artist_name'] . ' ' . $row['artist_medium'] . ':';
 		echo $row['artist_description'] . '</strong>';
-    echo " <a href='deleteArtist.php?id=" . $row['id'] ."'>Delete</a> "; //Link to delete artist page with id to delete
+    //echo " <a href='deleteArtist.php?id=" . $row['id'] ."'>Delete</a> "; //Link to delete artist page with id to delete
 		echo '</p><br />';
 
     $stmtItems = $db->prepare('SELECT item FROM merchandise m'
