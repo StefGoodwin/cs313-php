@@ -21,6 +21,10 @@ echo "merchDescr =$merchDescr\n";
 //use $_GET['ID'] to get id from querystring
 require("dbConnect.php");
 
+$query='DELETE FROM merchandise WHERE artist_id = :id';
+$stmt = $db->prepare($query);
+$stmt->bindValue(':id', $_GET['id']);
+$stmt->execute();
 
 $query='DELETE FROM artists WHERE id = :id';
 $stmt = $db->prepare($query);
