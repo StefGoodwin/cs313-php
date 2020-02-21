@@ -34,7 +34,7 @@ require("dbConnect.php");
   </form>
 
       <h1>Add Merchandise</h1>
-<form id="artistForm" action="insert-merch.php" method="POST">
+<form id="merchForm" action="insert-merch.php" method="POST">
   <label for="artists">Choose an Artist:</label>
   <select id="artistId" name="artistId">
     <?php
@@ -43,7 +43,7 @@ require("dbConnect.php");
     }
     ?>
 
-  </select><b>
+  </select><br>
 
       <label for="merchItem">Merchandise Item</label><br>
       <input type="text" id="merchItem" name="merchItem"><br><br>
@@ -66,7 +66,7 @@ require("dbConnect.php");
 
 
     <h1>Remove Artist</h1>
-    <form id="artistForm" action="deleteArtist.php" method="POST">
+    <form id="removeArtistForm" action="deleteArtist.php" method="POST">
       <label for="artistName">Artist Name</label><br>
       <input type="text" id="artistName" name="artistName"><br><br>
       <input type="submit" value="Delete from Database">
