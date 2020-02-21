@@ -32,7 +32,7 @@ echo '<pre>' , var_dump($_POST) , '</pre>';
 
     while ($itemRow = $stmt->fetch(PDO::FETCH_ASSOC))
 		{
-			echo $itemRow['item'] . ' : ' . $itemRow['merch_description'] . ', ' . <br>;
+			echo $itemRow['item'] . ' : ' . $itemRow['merch_description'] . ', '<br>;
 		}
 		echo '</p><br />';
 	}
