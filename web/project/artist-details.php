@@ -33,7 +33,7 @@ echo '<pre>' , var_dump($_POST) , '</pre>';
     //echo " <a href='deleteArtist.php?id=" . $row['id'] ."'>Delete</a> "; //Link to delete artist page with id to delete
     echo "<br><strong>Items: </strong>";
 
-    $stmt = $db->prepare("SELECT item FROM merchandise WHERE artist_id = $row['id']");
+    $stmt = $db->prepare("SELECT item, artist_id FROM merchandise WHERE artist_id = $row['id']");
     $stmt->execute();
     while ($itemRow = $stmt->fetch(PDO::FETCH_ASSOC))
 		{
