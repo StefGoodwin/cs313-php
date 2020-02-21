@@ -7,5 +7,24 @@ body {
   width: 95%;
   height: auto;
   margin: auto;;
-  padding: 10px;  
+  padding: 10px;
+}
+
+.artistAddForm {
+  float: left;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ffffff;
+
+}
+
+.merchAddForm {
+
+
+
+}
+
+.removeArtistForm {
+
+
 }

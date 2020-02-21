@@ -34,7 +34,7 @@ require("dbConnect.php");
       <br><br>
   </form>
 </div>
-<div class="aritstAddForm">
+<div class="merchAddForm">
       <h1>Add Merchandise</h1>
 <form id="merchForm" action="insert-merch.php" method="POST">
   <label for="artists">Choose an Artist:</label><br>
