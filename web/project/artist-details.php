@@ -42,7 +42,7 @@ require("dbConnect.php");
 
   while ($itemRow = $stmtItems->fetch(PDO::FETCH_ASSOC))
   {
-    echo $row['artist_name'] . $itemRow['item'] . ', ';
+    echo $itemRow['item'] . ', ';
   }
 
   echo '</p>';
