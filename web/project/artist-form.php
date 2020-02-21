@@ -44,7 +44,6 @@ require("dbConnect.php");
       echo "<option value='{$row['id']}'>{$row['artist_name']}</option>";
     }
     ?>
-
   </select><br><br>
 
       <label for="merchItem">Merchandise Item</label><br>
@@ -63,7 +62,6 @@ require("dbConnect.php");
       <input type="text" id="merchDescr" name="merchDescr"><br><br>
       <input type="submit" value="Add to Merchandise">
     </form>
-
 </div>
 
 <div class="removeArtistForm">
