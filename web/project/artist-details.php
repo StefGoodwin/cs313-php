@@ -14,8 +14,7 @@ echo '<pre>' , var_dump($_POST) , '</pre>';
 
     <p><?php
     try {
-      $statement = $db->prepare('SELECT a.id, a.artist_name, a.artist_medium, a.artist_description, m.artist_id FROM artists AS a
-                                 INNER JOIN merchandise AS m ON a.id = m.artist_id');
+      $statement = $db->prepare('SELECT id, artist_name, artist_medium, artist_description FROM artists');
       $statement->execute();
 
 
@@ -29,8 +28,8 @@ echo '<pre>' , var_dump($_POST) , '</pre>';
     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	{
 		echo '<p>';
-		echo '<strong>Artist: </strong> '. $row['artist_name'] . '<br><strong>Medium: </strong> ' . $row['artist_medium'] . '<br><strong>Description: </strong>';
-		echo $row['artist_description'] . '';
+		echo '<strong>Artist: </strong> '. $row['artist_name'] . '<br><strong>Medium: </strong> ' . $row['artist_medium'] . '<br><strong>Description: </strong>' . $row['artist_description'];
+
     //echo " <a href='deleteArtist.php?id=" . $row['id'] ."'>Delete</a> "; //Link to delete artist page with id to delete
     echo "<br><strong>Items: </strong>";
 
