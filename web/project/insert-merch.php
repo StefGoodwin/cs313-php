@@ -1,10 +1,10 @@
 <?php
 require("dbConnect.php");
-
+/*
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-echo '<pre>' . var_dump($_POST) . '</pre>';
-
+echo '<pre>' , var_dump($_POST) , '</pre>';
+*/
 $artistId = $_POST['artistId'];
 $item = $_POST['merchItem'];
 $size = $_POST['merchSize'];
@@ -37,7 +37,7 @@ $statement->bindValue(':size', $size);
 $statement->bindValue(':price', $price);
 $statement->bindValue(':quantity', $quantity);
 $statement->bindValue(':merchDescr', $merchDescr);
-$statement->bindValue(':artist_id', $aristId);
+$statement->bindValue(':artist_id', $artistId);
 $statement->execute();
 
 } catch (\Exception $ex) {
@@ -45,7 +45,7 @@ $statement->execute();
 
 }
 
-//header("Location: artist-details.php");
- //die();
+header("Location: artist-details.php");
+ die();
 
 ?>
