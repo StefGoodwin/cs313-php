@@ -33,9 +33,8 @@ require("dbConnect.php");
 
 
 	}
-  $stmtItems = $db->prepare('  SELECT item FROM merchandise AS m
-  INNER JOIN artists AS a ON a.id = m.artist_id
-  ');
+  $stmtItems = $db->prepare('SELECT item FROM merchandise AS m
+  INNER JOIN artists AS a ON a.id = m.artist_id');
 
   $stmtItems->bindValue(':artistId', $row['id']);
   $stmtItems->execute();
@@ -43,7 +42,7 @@ require("dbConnect.php");
 
   while ($itemRow = $stmtItems->fetch(PDO::FETCH_ASSOC))
   {
-    echo $itemRow['item'] . ', ';
+    echo $row['artist_name'] . $itemRow['item'] . ', ';
   }
 
   echo '</p>';
