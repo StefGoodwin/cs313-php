@@ -6,7 +6,7 @@ body {
   display: flex;
   width: 95%;
   height: auto;
-  margin: auto;;
+  margin: auto;
   padding: 10px;
 }
 
@@ -14,7 +14,7 @@ body {
   float: left;
   text-align: center;
   padding: 10px;
-  margin: auto;
+  margin: 25px;
   border: 1px solid #ffffff;
 
 }
