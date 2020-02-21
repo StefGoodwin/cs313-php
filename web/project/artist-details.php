@@ -25,7 +25,7 @@ echo '<pre>' , var_dump($_POST) , '</pre>';
     echo " <a href='deleteArtist.php?id=" . $row['id'] ."'>Delete</a> "; //Link to delete artist page with id to delete
     echo "<br><strong>Items: </strong>";
 
-    $stmt = $db->prepare("SELECT item, artist_id FROM merchandise WHERE artist_id = :artistId");
+    $stmt = $db->prepare("SELECT item, merch_description, artist_id FROM merchandise WHERE artist_id = :artistId");
 
     $stmt->bindValue(':artistId', $row['id']);
 		$stmt->execute();
