@@ -11,7 +11,7 @@ echo '<pre>' , var_dump($_POST) , '</pre>';
     <title>Artist Details</title>
   </head>
   <body>
-
+<h1>Artist Details</h2>
     <p><?php
     try {
       $statement = $db->prepare('SELECT id, artist_name, artist_medium, artist_description FROM artists');
