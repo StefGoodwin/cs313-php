@@ -1,4 +1,10 @@
 <?php
+require("dbConnect.php");
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+echo '<pre>' . var_dump($_POST) . '</pre>';
+
 $artistId = $_POST['artistId'];
 $item = $_POST['merchItem'];
 $size = $_POST['merchSize'];
@@ -18,7 +24,7 @@ echo "price =$price\n";
 echo "item =$item\n";
 echo "merchDescr =$merchDescr\n";
 */
-require("dbConnect.php");
+
 
 
 try
@@ -39,7 +45,7 @@ $statement->execute();
 
 }
 
-header("Location: artist-details.php");
- die();
+//header("Location: artist-details.php");
+ //die();
 
 ?>
