@@ -31,21 +31,22 @@ require("dbConnect.php");
     //echo " <a href='deleteArtist.php?id=" . $row['id'] ."'>Delete</a> "; //Link to delete artist page with id to delete
 		echo '</p><br />';
 
+    $stmtItems = $db->prepare("SELECT item FROM merchandise AS m
+                               INNER JOIN artists AS a ON a.id = m.artist_id
+                               WHERE id = $row['id']");
 
+    $stmtItems->bindValue(':artistId', $row['id']);
+    $stmtItems->execute();
+
+
+    while ($itemRow = $stmtItems->fetch(PDO::FETCH_ASSOC))
+    {
+      echo $itemRow['item'] . ', ';
+    }
+
+    echo '</p>';
 	}
-  $stmtItems = $db->prepare('SELECT item FROM merchandise AS m
-  INNER JOIN artists AS a ON a.id = m.artist_id');
 
-  $stmtItems->bindValue(':artistId', $row['id']);
-  $stmtItems->execute();
-
-
-  while ($itemRow = $stmtItems->fetch(PDO::FETCH_ASSOC))
-  {
-    echo $itemRow['item'] . ', ';
-  }
-
-  echo '</p>';
 }
 catch (PDOException $ex)
 {
