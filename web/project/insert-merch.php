@@ -1,4 +1,5 @@
 <?php
+$artistId = $_POST['artistId'];
 $item = $_POST['merchItem'];
 $size = $_POST['merchSize'];
 $quantity = $_POST['merchQuanitiy'];
@@ -22,7 +23,7 @@ require("dbConnect.php");
 
 try
 {
-$query = 'INSERT INTO merchandise(item, merch_size, price, quantity, merch_description) VALUES(:item, :size, :price, :quantity, :merchDescr)';
+$query = 'INSERT INTO merchandise(item, merch_size, price, quantity, merch_description, artist_id) VALUES(:item, :size, :price, :quantity, :merchDescr, :artist_id)';
 $statement = $db->prepare($query);
 
 $statement->bindValue(':item', $item);
@@ -30,6 +31,7 @@ $statement->bindValue(':size', $size);
 $statement->bindValue(':price', $price);
 $statement->bindValue(':quantity', $quantity);
 $statement->bindValue(':merchDescr', $merchDescr);
+$statement->bindValue(':artist_id', $aristId);
 $statement->execute();
 
 } catch (\Exception $ex) {

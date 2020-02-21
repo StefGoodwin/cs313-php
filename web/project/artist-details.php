@@ -26,14 +26,15 @@ require("dbConnect.php");
     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	{
 		echo '<p>';
-		echo '<strong>Artist: </strong> '. $row['artist_name'] . '<strong>Medium: </strong> ' . $row['artist_medium'] . '<strong>Description: </strong>';
+		echo '<strong>Artist: </strong> '. $row['artist_name'] . '<br><strong>Medium: </strong> ' . $row['artist_medium'] . '<br><strong>Description: </strong>';
 		echo $row['artist_description'] . '';
     //echo " <a href='deleteArtist.php?id=" . $row['id'] ."'>Delete</a> "; //Link to delete artist page with id to delete
 		echo '</p><br />';
 
-    $stmtItems = $db->prepare('SELECT item FROM merchandise m'
-    .' INNER JOIN artist_merchandise am ON m.id = am.merch_id'
-    .' INNER JOIN artists a ON a.id = am.artist_id WHERE a.id = :artistId');
+    $stmtItems = $db->prepare('
+    SELECT item FROM merchandise AS m
+    INNER JOIN artists AS a ON a.id = m.artist_id
+    ');
 
 		$stmtItems->bindValue(':artistId', $row['id']);
 		$stmtItems->execute();
@@ -41,7 +42,7 @@ require("dbConnect.php");
 
 		while ($itemRow = $stmtItems->fetch(PDO::FETCH_ASSOC))
 		{
-			echo $itemRow['name'] . ' ';
+			echo $itemRow['item'] . ', ';
 		}
 
 		echo '</p>';

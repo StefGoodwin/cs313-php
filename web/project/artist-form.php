@@ -36,14 +36,14 @@ require("dbConnect.php");
       <h1>Add Merchandise</h1>
 <form id="artistForm" action="insert-merch.php" method="POST">
   <label for="artists">Choose an Artist:</label>
-  <select id="artists" name="artists">
+  <select id="artistId" name="artistId">
     <?php
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
       echo "<option value='{$row['id']}'>{$row['artist_name']}</option>";
     }
     ?>
 
-  </select>
+  </select><b>
 
       <label for="merchItem">Merchandise Item</label><br>
       <input type="text" id="merchItem" name="merchItem"><br><br>
