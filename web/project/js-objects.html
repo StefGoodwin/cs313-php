@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+<!--In JavaScript, think of objects as a collection of ‘key:value’ pairs.
+This brings to us the first and most popular way we create objects in
+JavaScript.-->
+<h2>JavaScript Objects-LITEREAL SYNTAX</h2>
+
+
+<p id="personDemo"></p>
+
+<script>
+// Create an object:literal syntax: var person is the object, we then use properties
+// to give values to the object.
+var person = {
+  firstName: "Stef",
+  lastName: "Goodwin",
+  major: "web design",
+  eyeColor: "blue"
+};
+
+// Display some data from the object:
+document.getElementById("personDemo").innerHTML =
+person.firstName + " " + person.lastName +  " is a " + person.major
++ " major" + " and her eye color is " + person.eyeColor;
+</script>
+
+<h2>Creating an object (see output in console)</h2>
+<!-- Below in the example I am creating a companyObject "Brewer Companies" and
+    populating it with an employee value.
+     -->
+<script>
+let companyObject = {company: "Brewer Companies"}
+let employee = Object.create(companyObject,  {    name:{      value: "Stefnie Goodwin"    }  });
+
+// Output by using object and property
+console.log(employee.company);
+console.log(employee.name);
+
+</script>
+<h2>An object method is a function definition, stored as a property value.</h2>
+
+<p id="fullName"></p>
+
+<script>
+// Create an object and store the function as a property you will want returned:
+var person = {
+  firstName: "Stefnie",
+  lastName : "Goodwin",
+  location     : "Arizona",
+  fullName : function() {
+    return this.firstName + " " + this.lastName + " lives in " + this.location;
+  }
+};
+// Display data from the object:
+document.getElementById("fullName").innerHTML = person.fullName();
+</script>
+
+<h2>Object.assign method (see in console)</h2>
+<!--The assign method was a little tricky for me to understand.
+    With the example below I am assigning an employee to a duty
+    and department. It is just a generic employee, I would then
+    think that I would need to assign a first and last name to the
+    employee. SEE BELOW-->
+
+<script>
+  let empObject = {fullName: "Stefnie Goodwin"}
+  let dutyObject = {duty: "Bank Reconcilliations"}
+  let departmentObject = {department: "Accounting"}
+
+
+
+  let employee1 = Object.assign({}, empObject, dutyObject, departmentObject);
+  console.log(employee1.fullName)
+  console.log(employee1.duty)
+  console.log(employee1.department)
+
+</script>
+
+<h2>Using ES6 classes to create objects (see console log for output)</h2>
+<!-- Using a constructor to create many objects to an object type. In the example
+    below Persons is the object type -->
+<script>
+class Persons {  constructor(fname, lname) {
+  this.firstName = fname;
+  this.lastName = lname;     }}
+
+let person1 = new Persons('Stefnie', 'Goodwin');
+let person2 = new Persons('Ray', 'Goodwin');
+let person3 = new Persons('Thayne', 'Hinton');
+
+console.log(person1.firstName + " " + person1.lastName);
+console.log(person2.firstName + " " + person2.lastName);
+console.log(person3.firstName + " " + person3.lastName);
+</script>
+
+<h2>Functional Instantiation (see console for output)</h2>
+
+<script>
+const Student = function(major, subject, time){
+  const aStudent = {};
+  aStudent.major = major;
+  aStudent.class = subject;
+  aStudent.time = '0900';
+  aStudent.greeting = function(){
+    return `I am majoring in ${major} and my first class ${subject} is at ${time}`;
+  };
+  return aStudent;
+};
+const mySchedule = Student('Web Design', 'Mobile Application', '0900');
+console.log(mySchedule.greeting());
+
+</script>
+
+<h2>Functional Shared Pattern (see console for output )</h2>
+
+<script>
+
+  const Student1 = function(major, subject, time){
+    const aStudent1 = {};
+    aStudent1.major = major;
+    aStudent1.class = subject;
+    aStudent1.time = '0900';
+    aStudent1.greeting = studentMethods.greeting;
+  return aStudent1;
+};
+const studentMethods = {};
+studentMethods.greeting = function(){
+  return `I am a ${this.major} major`
+};
+const myStudent1 = Student1('Web Design', 'Mobile Application', '0900');
+console.log(myStudent1.greeting());
+</script>
+
+
+<h2>Prototype Inheritance</h2>
+<!--Prototype Inheritance
+All JavaScript objects inherit properties and methods from a prototype:
+
+Date objects inherit from Date.prototype
+Array objects inherit from Array.prototype
+Person objects inherit from Person.prototype
+The Object.prototype is on the top of the prototype inheritance chain:
+
+Date objects, Array objects, and Person objects inherit from Object.prototype.-->
+
+<p id="addPerson"></p>
+
+<script>
+function addPerson(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+addPerson.prototype.nationality = "English";
+addPerson.prototype.country = "United States"
+
+var mySelf = new addPerson("Stefnie", "Goodwin", 43, "blue");
+document.getElementById("addPerson").innerHTML =
+"My nationality is " + mySelf.nationality + " I live in " + mySelf.country + " and my eyes are " + mySelf.eyeColor;
+</script>
+
+
+
+</body>
+</html>

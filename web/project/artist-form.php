@@ -1,5 +1,11 @@
 <?php
+
 require("dbConnect.php");
+  $statement = $db->prepare('SELECT id, artist_name FROM artists');
+  $statement->execute();
+
+
+
 
 ?>
 
@@ -25,9 +31,19 @@ require("dbConnect.php");
       <input type="text" id="artistDescription" name="artistDescription"><br><br>
       <input type="submit" value="Add Artist">
       <br><br>
-
+  </form>
 
       <h1>Add Merchandise</h1>
+<form id="artistForm" action="insert-merch.php" method="POST">
+  <label for="artists">Choose an Artist:</label>
+  <select id="artists" name="artists">
+    <?php
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+      echo "<option value='{$row['id']}'>{$row['artist_name']}</option>";
+    }
+    ?>
+
+  </select>
 
       <label for="merchItem">Merchandise Item</label><br>
       <input type="text" id="merchItem" name="merchItem"><br><br>
