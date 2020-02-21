@@ -14,7 +14,7 @@ echo '<pre>' , var_dump($_POST) , '</pre>';
 
     <p><?php
     try {
-      $statement = $db->prepare('SELECT a.id, a.artist_name, a.artist_medium, a.artist_description, m.item FROM artists AS a
+      $statement = $db->prepare('SELECT a.id, a.artist_name, a.artist_medium, a.artist_description, m.artist_id FROM artists AS a
                                  INNER JOIN merchandise AS m ON a.id = m.artist_id');
       $statement->execute();
 
@@ -32,12 +32,19 @@ echo '<pre>' , var_dump($_POST) , '</pre>';
 		echo '<strong>Artist: </strong> '. $row['artist_name'] . '<br><strong>Medium: </strong> ' . $row['artist_medium'] . '<br><strong>Description: </strong>';
 		echo $row['artist_description'] . '';
     //echo " <a href='deleteArtist.php?id=" . $row['id'] ."'>Delete</a> "; //Link to delete artist page with id to delete
-    echo "<br><strong>Items: </strong>{$row['item']}";
+    echo "<br><strong>Items: </strong>";
+
+    $stmt = $db->prepare("SELECT item FROM merchandise WHERE artist_id = $row['id']");
+    $stmt->execute();
+    while ($itemRow = $stmt->fetch(PDO::FETCH_ASSOC))
+		{
+			echo $itemRow['item'] . ' ';
+		}
 		echo '</p><br />';
+	}
 
 	}
 
-}
 catch (PDOException $ex)
 {
 	echo "Error with DB. Details: $ex";
