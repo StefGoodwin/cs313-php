@@ -30,17 +30,17 @@ echo '<pre>' , var_dump($_POST) , '</pre>';
 		echo '<p>';
 		echo '<strong>Artist: </strong> '. $row['artist_name'] . '<br><strong>Medium: </strong> ' . $row['artist_medium'] . '<br><strong>Description: </strong>' . $row['artist_description'];
 
-    //echo " <a href='deleteArtist.php?id=" . $row['id'] ."'>Delete</a> "; //Link to delete artist page with id to delete
+    echo " <a href='deleteArtist.php?id=" . $row['id'] ."'>Delete</a> "; //Link to delete artist page with id to delete
     echo "<br><strong>Items: </strong>";
 
     $stmt = $db->prepare("SELECT item, artist_id FROM merchandise WHERE artist_id = :artistId");
-    
+
     $stmt->bindValue(':artistId', $row['id']);
 		$stmt->execute();
 
     while ($itemRow = $stmt->fetch(PDO::FETCH_ASSOC))
 		{
-			echo $itemRow['item'] . ' ';
+			echo $itemRow['item'] . ', ';
 		}
 		echo '</p><br />';
 	}

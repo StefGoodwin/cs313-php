@@ -22,7 +22,7 @@ echo "merchDescr =$merchDescr\n";
 require("dbConnect.php");
 
 
-$query='DELETE FROM artists WHERE ID = :id';
+$query='DELETE FROM artists WHERE id = :id';
 $stmt = $db->prepare($query);
 $stmt->bindValue(':id', $_GET['id']);
 $stmt->execute();
