@@ -35,7 +35,7 @@ require("dbConnect.php");
 
       <h1>Add Merchandise</h1>
 <form id="merchForm" action="insert-merch.php" method="POST">
-  <label for="artists">Choose an Artist:</label>
+  <label for="artists">Choose an Artist:</label><br>
   <select id="artistId" name="artistId">
     <?php
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {

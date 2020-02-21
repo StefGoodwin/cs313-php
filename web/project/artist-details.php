@@ -17,14 +17,6 @@ echo '<pre>' , var_dump($_POST) , '</pre>';
       $statement = $db->prepare('SELECT id, artist_name, artist_medium, artist_description FROM artists');
       $statement->execute();
 
-
-/*
-    try {
-      $statement = $db->prepare('SELECT id, item, merch_size, price, quantity, merch_description FROM merchandise');
-      $statement->execute();
-
-    }
-*/
     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	{
 		echo '<p>';
@@ -52,11 +44,7 @@ catch (PDOException $ex)
 	echo "Error with DB. Details: $ex";
 	die();
 }
-  /*   ($db->query('SELECT artist_id, artist_name, artist_medium, artist_description FROM artists WHERE artist_id = ' . $_GET['artist_id'])  AS $row) {
 
-      echo $row['artist_name'] . " " . $row['artist_medium'] . " " . $row['artist_description'];
-
-    }*/
 ?>
 
         </p>
