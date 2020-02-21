@@ -26,8 +26,8 @@ require("dbConnect.php");
     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	{
 		echo '<p>';
-		echo '<strong>' . $row['artist_name'] . ' ' . $row['artist_medium'] . ':';
-		echo $row['artist_description'] . '</strong>';
+		echo '<strong>Artist: </strong> '. $row['artist_name'] . '<strong>Medium: </strong> ' . $row['artist_medium'] . '<strong>Description: </strong>';
+		echo $row['artist_description'] . '';
     //echo " <a href='deleteArtist.php?id=" . $row['id'] ."'>Delete</a> "; //Link to delete artist page with id to delete
 		echo '</p><br />';
 
@@ -39,7 +39,6 @@ require("dbConnect.php");
 		$stmtItems->execute();
 
 
-		// Go through each topic in the result
 		while ($itemRow = $stmtItems->fetch(PDO::FETCH_ASSOC))
 		{
 			echo $itemRow['name'] . ' ';
