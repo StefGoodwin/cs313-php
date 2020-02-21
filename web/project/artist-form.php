@@ -13,12 +13,13 @@ require("dbConnect.php");
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link type="text/css" rel="stylesheet" href="/styles.css" media="screen">
+    <link type="text/css" rel="stylesheet" href="styles.css" media="screen">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artist Form</title>
   </head>
   <body>
-
+    <div class="mainContainer">
+<div class="artistAddForm">
     <h1>Artist Add</h1>
     <form id="artistForm" action="insert-artist.php" method="POST">
       <label for="artistName">Artist Name</label><br>
@@ -32,7 +33,8 @@ require("dbConnect.php");
       <input type="submit" value="Add Artist">
       <br><br>
   </form>
-
+</div>
+<div class="aritstAddForm">
       <h1>Add Merchandise</h1>
 <form id="merchForm" action="insert-merch.php" method="POST">
   <label for="artists">Choose an Artist:</label><br>
@@ -43,7 +45,7 @@ require("dbConnect.php");
     }
     ?>
 
-  </select><br>
+  </select><br><br>
 
       <label for="merchItem">Merchandise Item</label><br>
       <input type="text" id="merchItem" name="merchItem"><br><br>
@@ -62,9 +64,9 @@ require("dbConnect.php");
       <input type="submit" value="Add to Merchandise">
     </form>
 
+</div>
 
-
-
+<div class="removeArtistForm">
     <h1>Remove Artist</h1>
     <form id="removeArtistForm" action="deleteArtist.php" method="POST">
       <label for="artistName">Artist Name</label><br>
@@ -73,7 +75,7 @@ require("dbConnect.php");
 
     </form>
 
-
-
+</div>
+</div>
   </body>
 </html>
