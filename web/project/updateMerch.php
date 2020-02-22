@@ -1,10 +1,10 @@
 <?php
-
+/*
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 echo '<pre>' , var_dump($_POST) , '</pre>';
 require("dbConnect.php");
-
+*/
 $artistId = $_POST['artistId'];
 $item = $_POST['merchItem'];
 $size = $_POST['merchSize'];
@@ -30,8 +30,8 @@ catch (PDOException $ex)
 {
 	echo "Error with DB. Details: $ex";
 }
-/*
+
 header('location: artist-details.php');
  die();
-*/
+
  ?>
