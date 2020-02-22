@@ -1,4 +1,8 @@
 <?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+echo '<pre>' , var_dump($_POST) , '</pre>';
 require("dbConnect.php");
 
 $artistId = $_POST['artistId'];
@@ -12,12 +16,12 @@ $merchDescr = $_POST['merchDescr'];
 try {
 $stmt = $db->prepare('UPDATE merchandise SET item = :item, merch_size = :merch_size, price = :price, quantity = :quantity, merch_description = :merch_description WHERE artist_id = :artist_id');
 
-$stmt->bindValue(':item', $item, PDO::PARAM_STR);
-$stmt->bindValue(':merch_size', $merch_size, PDO::PARAM_STR);
-$stmt->bindValue(':price', $price, PDO::PARAM_INT);
-$stmt->bindValue(':quantity', $quantity, PDO::PARAM_INT);
-$stmt->bindValue(':merch_description', $merch_description, PDO::PARAM_STR);
-$statement->bindValue(':artist_id', $artist_Id);
+$statement->bindValue(':item', $item);
+$statement->bindValue(':size', $size);
+$statement->bindValue(':price', $price);
+$statement->bindValue(':quantity', $quantity);
+$statement->bindValue(':merchDescr', $merchDescr);
+$statement->bindValue(':artist_id', $artistId);
 $stmt->execute();
 echo $stmt->rowcount();
 
@@ -25,7 +29,8 @@ echo $stmt->rowcount();
 catch (\Exception $e) {
   echo "Error with DB. Details: $e";
 }
-header('location:artist-details.php');
+/*
+header('location: artist-details.php');
  die();
-
+*/
  ?>
