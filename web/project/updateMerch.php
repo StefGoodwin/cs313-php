@@ -17,17 +17,18 @@ try {
 $statement = 'UPDATE merchandise SET item = :item, merch_size = :merch_size, price = :price, quantity = :quantity, merch_description = :merch_description WHERE artist_id = :artist_id';
 $statement = $db->prepare($statement);
 
-$statement->bindValue(':artist_id', $artistId, PDO::PARAM_INT);
-$statement->bindValue(':item', $item, PDO::PARAM_STR);
-$statement->bindValue(':size', $size, PDO::PARAM_STR);
-$statement->bindValue(':price', $price, PDO::PARAM_INT);
-$statement->bindValue(':quantity', $quantity, PDO::PARAM_INT);
-$statement->bindValue(':merchDescr', $merchDescr, PDO::PARAM_STR);
+$statement->bindValue(':artist_id', $artistId);
+$statement->bindValue(':item', $item);
+$statement->bindValue(':size', $size);
+$statement->bindValue(':price', $price);
+$statement->bindValue(':quantity', $quantity);
+$statement->bindValue(':merchDescr', $merchDescr);
 $stmt->execute();
 
 }
-catch (\Exception $e) {
-  echo "Error with DB. Details: $e";
+catch (PDOException $ex)
+{
+	echo "Error with DB. Details: $ex";
 }
 /*
 header('location: artist-details.php');
