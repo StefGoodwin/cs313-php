@@ -15,6 +15,7 @@ $merchDescr = $_POST['merchDescr'];
 
 try {
 $stmt = $db->prepare('UPDATE merchandise SET item = :item, merch_size = :merch_size, price = :price, quantity = :quantity, merch_description = :merch_description WHERE artist_id = :artist_id');
+$stmt->execute();
 
 $stmt = $db->prepare($stmt);
 $statement->bindValue(':artist_id', $artistId, PDO::PARAM_INT);
