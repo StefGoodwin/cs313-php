@@ -5,6 +5,7 @@ ini_set('display_errors', 1);
 echo '<pre>' , var_dump($_POST) , '</pre>';
 require("dbConnect.php");
 
+$id = $_POST['id'];
 $artistId = $_POST['artistId'];
 $item = $_POST['merchItem'];
 $size = $_POST['merchSize'];
