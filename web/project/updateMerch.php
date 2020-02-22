@@ -16,7 +16,7 @@ $merchDescr = $_POST['merchDescr'];
 try {
 //function updateMerch($id, $artistId, $item, $size, $price, $quantity, $merchDescr) {
 
-$statement = 'UPDATE merchandise SET id = :id, artist_id = :artist_id, item = :item, merch_size = :size, price = :price, quantity = :quantity, merch_description = :merchDescr WHERE artist_id = :id';
+$statement = 'UPDATE merchandise SET id = :id, artist_id = :artist_id, item = :item, merch_size = :size, price = :price, quantity = :quantity, merch_description = :merchDescr WHERE id = :artist_id';
 $statement = $db->prepare($statement);
 
 $statement->bindValue(':artist_id', $artistId);
@@ -25,7 +25,7 @@ $statement->bindValue(':size', $size);
 $statement->bindValue(':price', $price);
 $statement->bindValue(':quantity', $quantity);
 $statement->bindValue(':merchDescr', $merchDescr);
-$statement->bindValue(':id', $artistId);
+$statement->bindValue(':artist_id', $id);
 $statement->execute();
 $rowsChanged = $statement->rowCount();
 $statement->closeCursor();
