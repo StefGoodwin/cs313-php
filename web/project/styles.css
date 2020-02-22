@@ -29,6 +29,16 @@ body {
 
 }
 
+.merchUpdateForm {
+  float: left;
+  text-align: center;
+  padding: 10px;
+  margin: 25px;
+  border: 1px solid #ffffff;
+
+
+}
+
 .removeArtistForm {
   float: left;
   text-align: center;

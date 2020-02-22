@@ -12,14 +12,9 @@ CREATE TABLE merchandise (
 	merch_size VARCHAR(10) NOT NULL,
 	price INT NOT NULL,
 	quantity INT NOT NULL,
-	merch_description VARCHAR(255) NOT NULL	
+	merch_description VARCHAR(255) NOT NULL,
+	artist_id INT NOT NULL REFERENCES artists(id)
 );	
-
-CREATE TABLE artist_merchandise (
-	artist_id INT NOT NULL REFERENCES artists(id),
-	merch_id INT NOT NULL REFERENCES merchandise(id)
-);
-
 
 
 INSERT INTO artists (artist_name, artist_medium, artist_description) VALUES ('Ray Goodwin', 'musician', 'Guitar virtuoso, pianist, and violinist');

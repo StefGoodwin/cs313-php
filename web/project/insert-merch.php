@@ -25,8 +25,6 @@ echo "item =$item\n";
 echo "merchDescr =$merchDescr\n";
 */
 
-
-
 try
 {
 $query = 'INSERT INTO merchandise(item, merch_size, price, quantity, merch_description, artist_id) VALUES(:item, :size, :price, :quantity, :merchDescr, :artist_id)';

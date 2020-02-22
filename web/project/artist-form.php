@@ -64,6 +64,36 @@ require("dbConnect.php");
     </form>
 </div>
 
+<div class="merchUpdateForm">
+      <h1>Update Merchandise</h1>
+<form id="merchForm" action="insert-merch.php" method="POST">
+  <label for="artists">Choose an Artist:</label><br>
+  <select id="artistId" name="artistId">
+    <?php
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+      echo "<option value='{$row['id']}'>{$row['artist_name']}</option>";
+    }
+    ?>
+  </select><br><br>
+
+      <label for="merchItem">Merchandise Item</label><br>
+      <input type="text" id="merchItem" name="merchItem"><br><br>
+
+      <label for="merchSize">Size if Applicable N/A if not</label><br>
+      <input type="text" id="merchSize" name="merchSize"><br><br>
+
+      <label for="merchQuanitiy">Quantity</label><br>
+      <input type="text" id="merchQuanitiy" name="merchQuanitiy"><br><br>
+
+      <label for="merchPrice">Price</label><br>
+      <input type="text" id="merchPrice" name="merchPrice"><br><br>
+
+      <label for="merchDescr">Merchandise Description</label><br>
+      <input type="text" id="merchDescr" name="merchDescr"><br><br>
+      <input type="submit" value="Update Merchandise">
+    </form>
+</div>
+
 <div class="removeArtistForm">
     <h1>Remove Artist</h1>
     <form id="removeArtistForm" action="deleteArtist.php" method="POST">
