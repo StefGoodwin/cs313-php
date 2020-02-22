@@ -5,7 +5,6 @@ ini_set('display_errors', 1);
 echo '<pre>' , var_dump($_POST) , '</pre>';
 require("dbConnect.php");
 
-$id = $_POST['id'];
 $artistId = $_POST['artistId'];
 $item = $_POST['merchItem'];
 $size = $_POST['merchSize'];
@@ -15,7 +14,7 @@ $item = $_POST['merchItem'];
 $merchDescr = $_POST['merchDescr'];
 
 try {
-$statement = 'UPDATE merchandise SET artist_id = :artist_id, item = :item, merch_size = :size, price = :price, quantity = :quantity, merch_description = :merchDescr WHERE id = :id';
+$statement = 'UPDATE merchandise SET id = :id, artist_id = :artist_id, item = :item, merch_size = :size, price = :price, quantity = :quantity, merch_description = :merchDescr WHERE id = :id';
 $statement = $db->prepare($statement);
 
 $statement->bindValue(':artist_id', $artistId);
