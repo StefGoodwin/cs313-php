@@ -14,7 +14,7 @@ $item = $_POST['merchItem'];
 $merchDescr = $_POST['merchDescr'];
 
 try {
-$statement = 'UPDATE merchandise SET item = :item, merch_size = :size, price = :price, quantity = :quantity, merch_description = :merchDescr WHERE artist_id = :artist_id';
+$statement = 'UPDATE merchandise SET item = :item, merch_size = :size, price = :price, quantity = :quantity + 5, merch_description = :merchDescr WHERE artist_id = :artist_id';
 $statement = $db->prepare($statement);
 
 $statement->bindValue(':artist_id', $artistId);
