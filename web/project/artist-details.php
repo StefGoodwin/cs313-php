@@ -22,8 +22,6 @@ echo '<pre>' , var_dump($_POST) , '</pre>';
 		echo '<p>';
     echo " <a href='deleteArtist.php?id=" . $row['id'] ."'>Remove Artist</a><br> "; //Link to delete artist page with id to delete
 		echo '<strong>Artist: </strong> '. $row['artist_name'] . '<br><strong>Medium: </strong> ' . $row['artist_medium'] . '<br><strong>Description: </strong>' . $row['artist_description'];
-
-    //echo " <a href='deleteArtist.php?id=" . $row['id'] ."'>Remove Artist</a> "; //Link to delete artist page with id to delete
     echo "<br><strong>Items: </strong>";
 
     $stmt = $db->prepare("SELECT item, merch_description, artist_id FROM merchandise WHERE artist_id = :artistId");
