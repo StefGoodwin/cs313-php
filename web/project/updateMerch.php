@@ -19,7 +19,7 @@ $statement = $db->prepare($statement);
 
 $statement->bindValue(':artist_id', $artistId);
 $statement->bindValue(':item', $item);
-$statement->bindValue(':size', $size, PDO::PARAM_STR);
+$statement->bindValue(':size', $size);
 $statement->bindValue(':price', $price);
 $statement->bindValue(':quantity', $quantity);
 $statement->bindValue(':merchDescr', $merchDescr);
