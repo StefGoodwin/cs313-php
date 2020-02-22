@@ -4,7 +4,8 @@ require("dbConnect.php");
   $statement = $db->prepare('SELECT id, artist_name FROM artists');
   $statement->execute();
 
-
+  $stmt = $db->prepare('SELECT id, artist_name FROM artists');
+  $stmt->execute();
 
 
 ?>
@@ -70,7 +71,7 @@ require("dbConnect.php");
   <label for="artists">Choose an Artist:</label><br>
   <select id="artistId" name="artistId">
     <?php
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
       echo "<option value='{$row['id']}'>{$row['artist_name']}</option>";
     }
     ?>
