@@ -25,7 +25,7 @@ $statement->bindValue(':size', $size);
 $statement->bindValue(':price', $price);
 $statement->bindValue(':quantity', $quantity);
 $statement->bindValue(':merchDescr', $merchDescr);
-$statement->bindValue(':artist_id', $id);
+//$statement->bindValue(':artist_id', $id);
 $statement->execute();
 $rowsChanged = $statement->rowCount();
 $statement->closeCursor();
