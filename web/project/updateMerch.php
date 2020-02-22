@@ -16,15 +16,14 @@ $merchDescr = $_POST['merchDescr'];
 try {
 $stmt = $db->prepare('UPDATE merchandise SET item = :item, merch_size = :merch_size, price = :price, quantity = :quantity, merch_description = :merch_description WHERE artist_id = :artist_id');
 
-
+$stmt = $db->prepare($stmt);
+$statement->bindValue(':artist_id', $artistId, PDO::PARAM_INT);
 $statement->bindValue(':item', $item, PDO::PARAM_STR);
 $statement->bindValue(':size', $size, PDO::PARAM_STR);
 $statement->bindValue(':price', $price, PDO::PARAM_INT);
 $statement->bindValue(':quantity', $quantity, PDO::PARAM_INT);
 $statement->bindValue(':merchDescr', $merchDescr, PDO::PARAM_STR);
-$statement->bindValue(':artist_id', $artistId, PDO::PARAM_INT);
 $stmt->execute();
-echo $stmt->rowcount();
 
 }
 catch (\Exception $e) {
