@@ -8,6 +8,8 @@ require("dbConnect.php");
   $stmt->execute();
 
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -84,10 +86,10 @@ require("dbConnect.php");
       <input type="text" id="merchSize" name="merchSize"><br><br>
 
       <label for="merchQuanitiy">Quantity</label><br>
-      <input type="text" id="merchQuanitiy" name="merchQuanitiy"><br><br>
+      <input type="text" id="merchQuanitiy" name="quantityUpdated" value="$itemsRow[quantity]"><br><br>
 
       <label for="merchPrice">Price</label><br>
-      <input type="text" id="merchPrice" name="merchPrice"><br><br>
+      <input type="text" id="merchPrice" name="priceUpdated" value="$itemsRow[price]"><br><br>
 
       <label for="merchDescr">Merchandise Description</label><br>
       <input type="text" id="merchDescr" name="merchDescr"><br><br>

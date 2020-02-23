@@ -14,6 +14,23 @@ $price = $_POST['merchPrice'];
 $item = $_POST['merchItem'];
 $merchDescr = $_POST['merchDescr'];
 
+
+$result = $db->query('SELECT * FROM merchandise WHERE artist_id = "$_POST[artistId]"');
+$itemsRow =$result->fetch(PDO::FETCH_ASSOC);
+
+
+if (isset($_POST['new'])) {
+	$result = $db->query('UPDATE merchandise SET price = $_POST[priceUpdated], quantity = $_POST[quantityUpdated]');
+	if(!$result) {
+		echo "Update Failed!!";
+	}
+	else {
+		echo "Item was successfully updated";
+	}
+
+
+}
+/*
 //try {
 function updateMerch($id, $artistId, $item, $size, $price, $quantity, $merchDescr) {
 
