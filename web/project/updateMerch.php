@@ -56,8 +56,8 @@ catch (PDOException $ex)
 	echo "Error with DB. Details: $ex";
 }
 */
-/*
+
 header('location: artist-details.php');
  die();
-*/
+
  ?>
