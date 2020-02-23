@@ -1,8 +1,10 @@
 <?php
 require("dbConnect.php");
+/*
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 echo '<pre>' , var_dump($_POST) , '</pre>';
+*/
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
