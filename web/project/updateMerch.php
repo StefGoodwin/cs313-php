@@ -13,6 +13,9 @@ $quantity = $_POST['merchQuanitiy'];
 $price = $_POST['merchPrice'];
 $item = $_POST['merchItem'];
 $merchDescr = $_POST['merchDescr'];
+/*
+/*******One of the many ways I was trying to get the update merchandise to work. I wanted it to be able to update quantity and price for an item.
+
 
 try{
 $result = $db->query('SELECT * FROM merchandise WHERE artist_id = "$_POST[artistId]"');
@@ -37,7 +40,7 @@ catch (PDOException $ex)
 	echo "Error with DB. Details: $ex";
 	die();
 }
-/*
+*/
 //try {
 function updateMerch($id, $artistId, $item, $size, $price, $quantity, $merchDescr) {
 

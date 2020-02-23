@@ -43,6 +43,9 @@ catch (PDOException $ex)
 	echo "Error with DB. Details: $ex";
 	die();
 }
+/*******One of the many ways I was trying to get the update merchandise to work. I wanted it
+to be able to update quantity and price for an item.
+
 
 try {
   $result = 'SELECT * FROM merchandise WHERE artist_id = "$_POST[artistId]"';
@@ -68,6 +71,7 @@ catch (PDOException $ex)
 	echo "Error with DB. Details: $ex";
 	die();
 }
+*/
 ?>
 
         </p>
