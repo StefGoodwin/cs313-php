@@ -69,7 +69,7 @@ require("dbConnect.php");
 
 <div class="merchUpdateForm">
       <h1>Update Merchandise</h1>
-<form id="merchForm" action="artist-details.php" method="POST">
+<form id="merchForm" action="updateMerch.php" method="POST">
   <label for="artists">Choose an Artist:</label><br>
   <select id="artistId" name="artistId">
     <?php

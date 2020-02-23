@@ -14,9 +14,8 @@ $price = $_POST['merchPrice'];
 $item = $_POST['merchItem'];
 $merchDescr = $_POST['merchDescr'];
 
-
+try{
 $result = $db->query('SELECT * FROM merchandise WHERE artist_id = "$_POST[artistId]"');
-$itemsRow = pg_fetch_assoc($result);
 
 
 if (isset($_POST['new'])) {
@@ -29,6 +28,14 @@ if (isset($_POST['new'])) {
 	}
 
 
+}
+
+}
+
+catch (PDOException $ex)
+{
+	echo "Error with DB. Details: $ex";
+	die();
 }
 /*
 //try {
@@ -57,7 +64,7 @@ catch (PDOException $ex)
 }
 */
 
-header('location: artist-details.php');
- die();
+//header('location: artist-details.php');
+ //die();
 
  ?>

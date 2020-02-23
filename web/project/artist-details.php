@@ -47,7 +47,7 @@ catch (PDOException $ex)
 try {
   $result = 'SELECT * FROM merchandise WHERE artist_id = "$_POST[artistId]"';
 
-  foreach($db->query($result) as $itemsRow) {
+  foreach ($db->query($result) as $itemsRow) {
     // code...
     if (isset($_POST['new'])) {
     	$result = $db->query('UPDATE merchandise SET price = $_POST[priceUpdated], quantity = $_POST[quantityUpdated]');
@@ -61,7 +61,6 @@ try {
 
     }
   }
-
 
 }
 catch (PDOException $ex)
