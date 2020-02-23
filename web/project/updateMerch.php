@@ -16,7 +16,7 @@ $merchDescr = $_POST['merchDescr'];
 
 
 $result = $db->query('SELECT * FROM merchandise WHERE artist_id = "$_POST[artistId]"');
-$itemsRow = pg_fetch_assoc($result);
+$itemsRow = fetch_assoc($result);
 
 
 if (isset($_POST['new'])) {
