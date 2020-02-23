@@ -65,7 +65,7 @@ require("dbConnect.php");
 </div>
 
 <div class="merchUpdateForm">
-      <h1>Update Merchandise **IN CONSTRUCTION**</h1>
+      <h1>Update Merchandise **UNDER CONSTRUCTION**</h1>
 <form id="merchForm" action="updateMerch.php" method="POST">
   <label for="artists">Choose an Artist:</label><br>
   <select id="artistId" name="artistId">
@@ -95,7 +95,7 @@ require("dbConnect.php");
 </div>
 
 <div class="removeArtistForm">
-    <h1>Remove Artist**IN CONSTRUCTION**</h1>
+    <h1>Remove Artist**UNDER CONSTRUCTION**</h1>
     <form id="removeArtistForm" action="deleteArtist.php" method="POST">
       <label for="artistName">Artist Name</label><br>
       <input type="text" id="artistName" name="artistName" required><br><br>
