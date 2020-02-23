@@ -45,10 +45,27 @@ catch (PDOException $ex)
 }
 
 try {
+  $result = $db->query('SELECT * FROM merchandise WHERE artist_id = "$_POST[artistId]"');
+  $itemsRow = pg_fetch_assoc($result);
 
+  if (isset($_POST['new'])) {
+  	$result = $db->query('UPDATE merchandise SET price = $_POST[priceUpdated], quantity = $_POST[quantityUpdated]');
+  	if(!$result) {
+  		echo "Update Failed!!";
+  	}
+  	else {
+  		echo "Item was successfully updated";
+  	}
+
+
+  }
 
 }
-
+catch (PDOException $ex)
+{
+	echo "Error with DB. Details: $ex";
+	die();
+}
 ?>
 
         </p>
