@@ -44,7 +44,7 @@ catch (PDOException $ex)
 //try {
 function updateMerch($id, $artistId, $item, $size, $price, $quantity, $merchDescr) {
 
-$statement = 'UPDATE merchandise SET item = :item, merch_size = :size, price = :price, quantity = :quantity, merch_description = :merchDescr WHERE id = :artist_id';
+$query = 'UPDATE merchandise SET item = :item, merch_size = :size, price = :price, quantity = :quantity, merch_description = :merchDescr WHERE id = :artist_id';
 $statement = $db->prepare($statement);
 
 $statement->bindValue(':artist_id', $artistId);
