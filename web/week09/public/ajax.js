@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("form#rateCalculation").on('submit', function(e){
+    $("form#calcValues").on('submit', function(e){
         e.preventDefault();
         var weight = $('input[name=weight]').val();
         var mailType = $('input[name=mailType]').val();
