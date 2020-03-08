@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Postal Rate Calculator</title>
+  </head>
+  <body>
+    <h1>Please provide the following information</h1>
+
+    <form action="/rateCalculation" method="post" id="calcValues">
+      <label>Weight:</label>
+      <input type="text" name="weight" placeholder="Weight (oz)">
+      <select name="mailType">
+        <option value="stamped">Letters(stamped)</option>
+        <option value="metered">Letters(metered)</option>
+        <option value="flats">Large Envelopes(flats)</option>
+        <option value="fClass">First-Class Package Service--Retail</option>
+
+      </select>
+      <input type="submit" value="Submit">
+
+    </form>
+
+  </body>
+</html>
