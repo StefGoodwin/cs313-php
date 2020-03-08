@@ -25,7 +25,7 @@
                     <ul class="assignments">
 					<li><a href="week03/shopping.php">Week 3 Assignment</a></li>
 					<li><a href="project/artist-form.php">Project</a></li>
-          <li><a href="week09/form.html">Week 9 Assignment</a></li>
+          <li><a href="week09/public/form.html">Week 9 Assignment</a></li>
 
 
 
