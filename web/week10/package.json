@@ -1,5 +1,5 @@
 {
-  "name": "node_projects",
+  "name": "cs313-w10-team",
   "version": "1.0.0",
   "description": "CS 313 PHP Base Code",
   "main": "server.js",
@@ -19,7 +19,8 @@
   "homepage": "https://github.com/byui-cs/cs313-php#readme",
   "dependencies": {
     "ejs": "^3.0.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^7.18.2"
   },
   "devDependencies": {}
 }

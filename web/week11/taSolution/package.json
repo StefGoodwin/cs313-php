@@ -1,0 +1,11 @@
+{
+  "name": "tasolution",
+  "version": "1.0.0",
+  "description": "Week 11 Teachers Solution",
+  "main": "movie-fetch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bro Burton",
+  "license": "ISC"
+}
